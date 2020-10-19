@@ -37,35 +37,13 @@ merge_arrays(["f", "d", "w", "t"], [5, 3, 7, 8])
 def merge_arrays(array1, array2)
   length = 0
   arr = []
+  length = array1.length if array1.length >array2.length
+  length = array2.length
 
-  length1 =  array1.length
-  length2 =  array2.length
-
-  if length1 == length2
-    for i in 0...length1
-        arr.push(array1[i])
-        arr.push(array2[i])
-    end
-  elsif !(length1 > length2)
-    for i in 0...length2
-      if !array1[i].nil?
-        arr.push(array1[i])
-        arr.push(array2[i])
-      else
-        arr.push(array2[i])
-      end
-    end
-  elsif !(length1 < length2)
-    for i in 0...length1
-      if !array2[i].nil?
-        arr.push(array1[i])
-        arr.push(array2[i])
-      else
-        arr.push(array1[i])
-      end
-    end
+  for i in 0...length
+    arr.push(array1[i], array2[i])
   end
-arr
+  arr.compact
 end
 
 

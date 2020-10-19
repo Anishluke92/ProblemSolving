@@ -23,54 +23,49 @@ calculate_score([["S", "R"], ["R", "S"], ["R", "R"]]) ➞ "Tie"
 
 =end
 
-def who_wins(player1, player2)
-
-  if player1 > player2
-    "Abigail" 
-  elsif player1 == player2 
-    "Tie"
+def who_wins(game)
+  if game[0]== "R" && game[1]== "S"
+    return 0
+  elsif game[0]== "S" && game[1]== "P" 
+    return 0
+  elsif game[0]== "P" && game[1]== "R"
+    return 0
+  elsif game[0]== "S" && game[1]== "S" || game[0]== "R" && game[1]== "R" || game[0]== "P" && game[1]== "P"
+    return "Tie"
   else
-    "Ben"
+    return 1
   end
 end
 
-def calculate_score(game)
-  abi = 0
-  ben = 0
 
+def calculate_score(game)
+  result = []
   if game.length > 0
     game.each do |element|
-      if (element[0] == 'R') && (element[1] == 'S')
-        abi += 1
-      elsif(element[0]== 'S') && (element[1] == 'P')
-        abi += 1
-      elsif(element[0] == 'P') && (element[1] == 'R')
-        abi += 1
-      elsif(element[0] == 'S') && (element[1] == 'R')
-        ben += 1
-      elsif(element[0] == 'P') && (element[1] == 'S')
-        ben += 1
-      elsif(element[0] == 'R') && (element[1] == 'P')
-        ben += 1
-      elsif ((element[0] == 'R') && (element[1] == 'R')) || ((element[0]== 'S') && (element[1] == 'S')) || ((element[0] == 'P') && (element[1] == 'P'))
-        abi += 0
-        ben += 0
-      end
+     result.push(who_wins(element))
+    end
+    if result.count(0)> result.count(1)
+      "Abigail"
+    elsif result.count(0)== result.count(1)
+      "TIE"
+    else
+      "Ben"
     end
   else
-    return "NO GAME HAS BEEN PLAYED..!!"
-  end
-  who_wins(abi, ben)
+    return "No game played.. !"
+  end 
 end
 
 
 print calculate_score([["R", "P"], ["R", "S"], ["S", "P"]])
 puts ""
-print calculate_score([["S", "R"], ["R", "S"], ["R", "R"]])
+print calculate_score([["S", "R"], ["R", "S"], ["R", "R"]]) 
 puts ""
 print calculate_score([["R", "R"], ["S", "S"]])
 puts ""
 print calculate_score([])
+puts ""
+print calculate_score([["S", "R"], ["R", "S"], ["R", "R"]]) 
 
 
 
