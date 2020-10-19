@@ -1,4 +1,4 @@
-=begin 
+=begin
 Create a function that takes two arrays and combines them by alternatingly taking elements from each array in turn.
 
 The arrays may be of different lengths, with at least one character / digit.
@@ -16,7 +16,7 @@ merge_arrays(["f", "d", "w", "t"], [5, 3, 7, 8])
 ➞ ["f", 5, "d", 3, "w", 7, "t", 8]
 =end
 
-=begin 
+=begin
 Create a function that takes two arrays and combines them by alternatingly taking elements from each array in turn.
 
 The arrays may be of different lengths, with at least one character / digit.

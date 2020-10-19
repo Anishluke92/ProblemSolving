@@ -37,7 +37,7 @@ Don't focus on how much physical space an element takes up, pretend that each el
 
 
 def percent_filled(array)
-	count_zeros = 0
+  count_zeros = 0
 	count_space = 0
 	total_length = 0
 

@@ -14,7 +14,7 @@ calculate_score([["R", "P"], ["R", "S"], ["S", "P"]]) ➞ "Abigail"
 
 # Ben wins the first game (Paper beats Rock).
 # Abigail wins the second game (Rock beats Scissors).
-# Abigail wins the third game (Scissors beats Paper). 
+# Abigail wins the third game (Scissors beats Paper).
 # Abigail wins 2/3.
 
 calculate_score([["R", "R"], ["S", "S"]]) ➞ "Tie"
@@ -26,7 +26,7 @@ calculate_score([["S", "R"], ["R", "S"], ["R", "R"]]) ➞ "Tie"
 def who_wins(game)
   if game[0]== "R" && game[1]== "S"
     return 0
-  elsif game[0]== "S" && game[1]== "P" 
+  elsif game[0]== "S" && game[1]== "P"
     return 0
   elsif game[0]== "P" && game[1]== "R"
     return 0
@@ -53,22 +53,16 @@ def calculate_score(game)
     end
   else
     return "No game played.. !"
-  end 
+  end
 end
 
 
 print calculate_score([["R", "P"], ["R", "S"], ["S", "P"]])
 puts ""
-print calculate_score([["S", "R"], ["R", "S"], ["R", "R"]]) 
+print calculate_score([["S", "R"], ["R", "S"], ["R", "R"]])
 puts ""
 print calculate_score([["R", "R"], ["S", "S"]])
 puts ""
 print calculate_score([])
 puts ""
-print calculate_score([["S", "R"], ["R", "S"], ["R", "R"]]) 
-
-
-
-
-
-        
+print calculate_score([["S", "R"], ["R", "S"], ["R", "R"]])
