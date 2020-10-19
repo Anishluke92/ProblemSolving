@@ -23,46 +23,61 @@ calculate_score([["S", "R"], ["R", "S"], ["R", "R"]]) ➞ "Tie"
 
 =end
 
+
 def who_wins(game)
-  if game[0]== "R" && game[1]== "S"
-    return 0
-  elsif game[0]== "S" && game[1]== "P"
-    return 0
-  elsif game[0]== "P" && game[1]== "R"
-    return 0
-  elsif game[0]== "S" && game[1]== "S" || game[0]== "R" && game[1]== "R" || game[0]== "P" && game[1]== "P"
-    return "Tie"
+  # method returns 0 if tie
+  # negative number if player0 wins
+  # positive number if player1 wins
+
+  player0 = game[0]
+  player1 = game[1]
+
+  #  we can quickly figure out if they both played the same
+  return 0 if player0 == player1
+
+  # list of what beats what
+  beats = {
+    'R': 'S', # rock beats scissors
+    'P': 'R',
+    'S': 'P'
+  }
+
+  # if what player0 played beats what player1 played, then player 0 wins
+  if beats[player0.to_sym] == player1
+    return -1
   else
     return 1
   end
 end
 
 
-def calculate_score(game)
-  result = []
-  if game.length > 0
-    game.each do |element|
-     result.push(who_wins(element))
-    end
-    if result.count(0)> result.count(1)
-      "Abigail"
-    elsif result.count(0)== result.count(1)
-      "TIE"
-    else
-      "Ben"
-    end
+def calculate_score(games)
+  return "No game played" if games.empty?
+
+  # negative number = player0 wins
+  # 0 = tie
+  # positive number = player1 wins
+  result = 0
+
+  games.each do |game|
+    result += who_wins(game)
+  end
+
+  if result == 0
+    "TIE"
+  elsif result < 0
+    "Abigail"
   else
-    return "No game played.. !"
+    "Ben"
   end
 end
 
 
-print calculate_score([["R", "P"], ["R", "S"], ["S", "P"]])
+print calculate_score([["R", "P"], ["R", "S"], ["S", "P"]]) # ➞ "Abigail"
 puts ""
-print calculate_score([["S", "R"], ["R", "S"], ["R", "R"]])
+print calculate_score([["R", "R"], ["S", "S"]]) # ➞ "Tie"
 puts ""
-print calculate_score([["R", "R"], ["S", "S"]])
+print calculate_score([["S", "R"], ["R", "S"], ["R", "R"]]) # ➞ "Tie"
 puts ""
-print calculate_score([])
+print calculate_score([["R","S"]])
 puts ""
-print calculate_score([["S", "R"], ["R", "S"], ["R", "R"]])
