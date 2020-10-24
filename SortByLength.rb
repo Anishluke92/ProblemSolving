@@ -19,10 +19,8 @@ Now we got to know all the word size in that sentence. Lets rearrange the senten
 =end
 def sort_by_length(strings)
 
-  string = strings.split(" ")
-  string.sort_by(&:length).join(" ")
+  strings.split(" ").sort_by(&:length).join(" ")
 
- 
 end
 
 print sort_by_length("Hello my friend")

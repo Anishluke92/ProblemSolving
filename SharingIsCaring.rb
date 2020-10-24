@@ -11,13 +11,13 @@ Notes
 There will only be one smallest number in a given array.
 =end
 def love(removed, numbers)
-  numbers.map{ |number|
+  numbers.map do |number|
     if number * 0.25 < 1 || number == numbers.min
       number += removed 
     else
       number -= number*0.25
     end
-  }
+  end
 end
 def show_the_love(numbers)
   store = 0

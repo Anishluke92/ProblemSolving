@@ -26,9 +26,9 @@ in total the count would be 1
 def lone(integer, len)
   count = 0
   integer.each_with_index do |number, index|
-    if index == 0 && number == "1" && integer[index+1] != '1'  || index == len  && number == "1" && integer[index-1] != '1'
+    if index == 0 && number == 1 && integer[index+1] != 1  || index == len  && number == 1 && integer[index-1] != 1
         count += 1 
-    elsif integer[index-1] != '1' && number == "1" && integer[index+1] != '1' 
+    elsif integer[index-1] != 1 && number == 1 && integer[index+1] != 1 
       count += 1
     else
         count += 0
@@ -38,11 +38,12 @@ def lone(integer, len)
 end
 
 def count_lone_ones(integer)
-  integer= integer.to_s.split("")
-  return 0  if !integer.include?("1")
+  integer= integer.digits.reverse 
+  return 0  if !integer.include?(1)
   len = (integer.length)-1
 
   lone(integer, len)
+
   
 end
 
@@ -56,4 +57,6 @@ print count_lone_ones(1111)
 puts ""
 print count_lone_ones(462)
 puts ""
+
+
 
