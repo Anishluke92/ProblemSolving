@@ -23,28 +23,45 @@ so in total the count would be 2.
 6.To the last we compare the next number 1 with the previous number 9, then we found our first lone 1. we should then increase the count +1.
 in total the count would be 1
 =end
-def lone(integer, len)
+
+
+
+
+def lone(array, number_to_count)
   count = 0
-  integer.each_with_index do |number, index|
-    if index == 0 && number == 1 && integer[index+1] != 1  || index == len  && number == 1 && integer[index-1] != 1
-        count += 1 
-    elsif integer[index-1] != 1 && number == 1 && integer[index+1] != 1 
+
+  array.each_with_index do |num, index|
+    # need 3 conditions for us to count
+    conditions = 0
+
+    # condition 1 - we have the number we are looking for
+    if num == number_to_count
+      conditions += 1
+    end
+
+    # condition 2 - check if the previous number is not the same
+    prev_index = index - 1
+    if prev_index < 0 || array[prev_index] != num
+      conditions += 1
+    end
+
+    # condition 3 - check if next number if not the same
+    next_index = index + 1
+    if next_index >= array.length || array[next_index] != num
+      conditions += 1
+    end
+
+    if conditions == 3
       count += 1
-    else
-        count += 0
     end
   end
+
   count
 end
 
-def count_lone_ones(integer)
-  integer= integer.digits.reverse 
-  return 0  if !integer.include?(1)
-  len = (integer.length)-1
 
-  lone(integer, len)
-
-  
+def count_lone_ones(full_number)
+  lone(full_number.digits, 1)
 end
 
 print count_lone_ones(101)

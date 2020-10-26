@@ -13,21 +13,23 @@ There will only be one smallest number in a given array.
 def love(removed, numbers)
   numbers.map do |number|
     if number * 0.25 < 1 || number == numbers.min
-      number += removed 
+      number += removed
     else
-      number -= number*0.25
+      number -= number * 0.25
     end
   end
 end
+
 def show_the_love(numbers)
   store = 0
 
   numbers.each_with_index do |number, index|
    store += number * 0.25 if (number * 0.25) >= 1 && number != numbers.min
   end
-  love(store,numbers)   
-   
+
+  love(store,numbers)
 end
+
 print show_the_love([4, 1, 4])
 puts ""
 print show_the_love([ 16,10, 8])
