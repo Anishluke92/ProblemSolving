@@ -16,8 +16,8 @@ Don't forget the space after the closing parentheses.
 =end
 
 def is_valid_phone_number(number)
-format = /\(?[0-9]{3}\)?\s[0-9]{3}-[0-9]{4}/
-number.match?format
+  format = /\(?[0-9]{3}\)?\s[0-9]{3}-[0-9]{4}/
+  number.match?format
 end
 
 print is_valid_phone_number("(123) 456-7890")
