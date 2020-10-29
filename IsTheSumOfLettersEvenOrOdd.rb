@@ -28,9 +28,9 @@ def even_or_odd(hash, string)
     sum += hash[letter] 
   end
   if  sum % 2 != 0 
-    "Odd"
+    "False"
   else 
-    "Even"
+    "True"
   end
 end
 
@@ -50,3 +50,5 @@ puts ""
 print is_alpha("True")
 puts ""
 print is_alpha("alexa")
+
+
