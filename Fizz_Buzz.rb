@@ -25,4 +25,4 @@ end
 
 for i in 1..100
   print "#{check(i)} "
-end
+end 
