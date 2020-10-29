@@ -27,15 +27,18 @@ def even_or_odd(hash, string)
   string.each do |letter|
     sum += hash[letter] 
   end
-  return "Odd"  if  sum%2 != 0 
-  return "Even"
+  if  sum % 2 != 0 
+    "Odd"
+  else 
+    "Even"
+  end
 end
 
 def is_alpha(string)
   string = string.downcase.scan /\w/ 
   hash = {}
 
-  ('a'..'z').to_a .each_with_index do |key, value|
+  ('a'..'z').to_a.each_with_index do |key, value|
     hash[key] = value + 1
   end
   
