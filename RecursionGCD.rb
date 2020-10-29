@@ -16,12 +16,10 @@ N/A
 =end
 
 def gcd(a, b)
-  puts "Inside gcd, a: #{a}, b: #{b}, a \% b: #{a % b}"
+ 
   if a % b == 0
-    puts "Inside if, a: #{a}, b: #{b}, a \% b: #{a % b}"
     b
   else
-    puts "Inside else, a: #{a}, b: #{b}, a \% b: #{a % b}"
     gcd(b, a % b)
   end
 end
