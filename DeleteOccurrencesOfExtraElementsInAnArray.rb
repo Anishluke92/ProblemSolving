@@ -19,10 +19,16 @@ Algorithm :
 3.Example limit given is 2 and we should only consider 2 occurrence of each element.
 4.Similarly do it for all the elements.
 5 .we should display all the element's occurrences up to the given limit.
+
+every time you do count, you are going through the whole array and checking the number of times this occurs.
+
+try a better algorithm where you only have to go through the array one and then get the result in the end.
+
+everytime you call .count it goes over it
 =end
 
 def delete_occurrences(arr, num)
-  newarray= []
+  newarray = []
   arr.each do |element| 
     newarray.push(element) if newarray.count(element) != num   
   end
