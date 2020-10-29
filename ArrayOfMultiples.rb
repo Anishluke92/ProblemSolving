@@ -21,7 +21,7 @@ Algorithm:
 def array_of_multiples(number, range)
   multiplied = []
   for i in 1..range 
-    multiplied.push(number*i)
+    multiplied.push(number * i)
   end
   multiplied
 end
