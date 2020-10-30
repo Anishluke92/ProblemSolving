@@ -16,14 +16,15 @@ Check the Resources tab for info on recursion.
 =end
 
 def length(string)
-
-  return 0 if string == ""
-
-  return string.length
-
-
+  if string == '' 
+    return 0
+  else 
+    return 1 + length(string.chop)  
+  end
+  
 end
 
+    
 print length("apple")
 puts ""
 print length("")
