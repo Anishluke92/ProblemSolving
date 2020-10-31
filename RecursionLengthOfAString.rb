@@ -16,12 +16,8 @@ Check the Resources tab for info on recursion.
 =end
 
 def length(string)
-  if string == '' 
-    return 0
-  else 
-    return 1 + length(string.chop)  
-  end
-  
+  return 0 if string == '' 
+  1 + length(string.chop)  
 end
 
     
