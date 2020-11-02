@@ -28,8 +28,9 @@ def canBalance(array)
     return true if leftside == rightside
 
     false
-    
+
 end 
+
 
 print canBalance([1, 1, 1, 2, 1]) 
 puts ""
