@@ -8,7 +8,6 @@ bunnyEars(2) → 4
 def bunnyEars(bunny)
     return 0 if bunny == 0   
     return 2 if bunny == 1
-    
     2 + bunnyEars(bunny-1)
 
 end
