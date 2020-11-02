@@ -27,11 +27,10 @@ def even_or_odd(hash, string)
   string.each do |letter|
     sum += hash[letter] 
   end
-  if  sum % 2 != 0 
-    "False"
-  else 
-    "True"
-  end
+
+  return true if  sum % 2 == 0  
+  false 
+   
 end
 
 def is_alpha(string)
@@ -41,7 +40,6 @@ def is_alpha(string)
   ('a'..'z').to_a.each_with_index do |key, value|
     hash[key] = value + 1
   end
-  
   even_or_odd(hash, string)
 end
 
