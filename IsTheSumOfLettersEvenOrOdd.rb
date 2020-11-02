@@ -27,10 +27,8 @@ def even_or_odd(hash, string)
   string.each do |letter|
     sum += hash[letter] 
   end
-
-  return true if  sum % 2 == 0  
-  false 
-   
+  sum % 2 == 0  
+  
 end
 
 def is_alpha(string)
