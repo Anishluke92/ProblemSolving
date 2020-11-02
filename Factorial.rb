@@ -6,9 +6,9 @@ factorial(3) → 6
 =end
 
 def factorial(number)
-    store = 1
+  
     return 1 if number == 1
-    store * number * factorial(number - 1)
+    number * factorial(number - 1)
 end
  
 print factorial(1) 
