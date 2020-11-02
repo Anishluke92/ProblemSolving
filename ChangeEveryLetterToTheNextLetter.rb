@@ -20,6 +20,10 @@ Algorithm:
 2. similarly do it for the rest of the letter. 
 3. merge all the found alphabets as one word.
 =end 
+
+
+
+
 def move(word)
   arr = []
   word = word.downcase.scan /\w/ 
