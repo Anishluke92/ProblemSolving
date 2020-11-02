@@ -27,12 +27,14 @@ Algorithm:
 def move(word)
   arr = []
   word = word.downcase.scan /\w/ 
-  alphabet = ('a'..'z').to_a 
-
-  word.each do |letter|
-    index = alphabet.index(letter)
-    arr.push(alphabet[index+1])
+  alphabet = Hash.new
+  ('a'..'z').each_with_index do |key, value| 
+    alphabet[key] = value 
+  end 
+  word.each do |element| 
+    arr.push(alphabet.key(alphabet[element]+1))
   end
+
   arr.join("")
 end 
 
