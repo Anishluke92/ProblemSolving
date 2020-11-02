@@ -8,12 +8,7 @@ factorial(3) → 6
 def factorial(number)
     store = 1
     return 1 if number == 1
-     
-   
-    store *= number
-    return store * factorial(number - 1)
-
-
+    store * number * factorial(number - 1)
 end
  
 print factorial(1) 
