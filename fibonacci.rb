@@ -8,10 +8,9 @@ fibonacci(2) → 1
 =end
 
 def fibonacci(number)
-    return 0 if number == 0
-    return 1 if number  == 1
+    return number if number == 0 || number == 1
         
-    return fibonacci(number - 2) + fibonacci(number - 1)
+    fibonacci(number - 2) + fibonacci(number - 1)
     
 end 
 print fibonacci(0) 
