@@ -13,14 +13,15 @@ You can modify the input array in-place.
 def missingpostiveint(array)
     array = array.sort 
     array.each_with_index do |value, index|
-        
-         return (value + 1) if value >= 1 && array[index + 1] != value + 1 
-    
+    return (value + 1) if value >= 1 && array[index + 1] != value + 1  
+    return (value + 1) if value <-1  && array [index + 1] != value + 1
     end
-
-
 end
 
 print missingpostiveint([3, 4, -1, 1])
-puts 
+puts ""
 print missingpostiveint([1, 2, 0])
+puts ""
+print missingpostiveint([-7, -6, -5, -3, -1])
+puts ""
+print missingpostiveint([-2,1])
