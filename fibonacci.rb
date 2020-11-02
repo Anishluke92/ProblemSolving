@@ -9,9 +9,7 @@ fibonacci(2) → 1
 
 def fibonacci(number)
     return number if number == 0 || number == 1
-        
-    fibonacci(number - 2) + fibonacci(number - 1)
-    
+    fibonacci(number - 2) + fibonacci(number - 1)    
 end 
 print fibonacci(0) 
 puts ""
