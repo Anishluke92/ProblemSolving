@@ -7,21 +7,27 @@ isEverywhere([1, 2, 1, 3], 1) → true
 isEverywhere([1, 2, 1, 3], 2) → false
 
 isEverywhere([1, 2, 1, 3, 4], 1) → false
+so you are checking if the number is the target or if the next number if the target.
 
+so when this is not the case, when you have found a number that does not have a neighbouring number we are looking for, why don't you just return the whole method as false at that point. why wait till the array loop is finished and why then again loop through (when you do .include?) to find out if there is a 1 in the array to then return true and false in the end.
+
+Better algorithm:
+
+if you find a number that is not neighbouring the target just return false.
+if you get to the end of the array and you have not returned false, then you can return true because the number is everywhere.
 
 =end
 
 def isEverywhere(array, target)
-    arr = []
+
     for i in 0..array.length-2
         if array[i] == target || array[i+1] == target 
-           arr << 0
+           return true
         else
-           arr << 1
+           return false 
         end
     end
-    return true if !arr.include?(1)
-    false  
+     
 end
 
 
