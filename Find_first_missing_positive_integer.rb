@@ -20,7 +20,6 @@ def missingpostiveint(array)
         return  expected += 1  if  value == expected && index == array.length-1 
         expected += 1         
     end
-
 end
 
 
