@@ -21,24 +21,24 @@ we should only return false when we know its NOT there. so we can stop the progr
 =end
 
 def isEverywhere(array, target)
-
-
+    arr = []
     for i in 0..array.length-1
-        if array[i] == target || array[i+1] == target 
-          
-            return true
-        else
-         
-            return false 
-         end
-     end
-
+        if i != array.length-1
+            if array[i] == target || array[i+1]== target 
+                arr.push(true)
+            else
+                arr.push(false)
+            end 
+        end 
+    end
+        
+    arr.last 
  
 end
 
 
-print isEverywhere([1, 2, 1, 3], 1)
+print isEverywhere([1, 2, 3, 1], 1)
 puts ""
 print isEverywhere([1, 2, 1, 3], 2)
 puts ""
-print isEverywhere([1, 2, 1, 3, 4], 1)
+print isEverywhere([1, 2, 1, 3, 1], 1)
