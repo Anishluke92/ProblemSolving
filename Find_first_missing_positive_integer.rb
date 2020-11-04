@@ -12,13 +12,23 @@ You can modify the input array in-place.
 =end 
 
 def missingpostiveint(array)
-    #array = array.sort 
+    array = array.sort 
     expected = array[0]
-    array.each do |value|
-        return expected if value != expected 
-        expected += 1
+    
+        
+ 
+
+    array.each_with_index do |value, index|
+        return expected  if value != expected
+        expected = 1  if expected == -1   
+        return  expected += 1  if  value == expected && index == array.length-1 
+        expected += 1         
     end
+
 end
+
+
+
 
 print missingpostiveint([3, 4, -1, 1])
 puts ""
