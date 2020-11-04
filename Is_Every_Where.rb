@@ -15,19 +15,25 @@ Better algorithm:
 
 if you find a number that is not neighbouring the target just return false.
 if you get to the end of the array and you have not returned false, then you can return true because the number is everywhere.
+you can't return true. if you do that then it will check the first number and where it's true, it will just stop and return true. won't check other numbers.
 
+we should only return false when we know its NOT there. so we can stop the program early. Otherwise we will have to go through all and check if it is true...
 =end
 
 def isEverywhere(array, target)
 
-    for i in 0..array.length-2
+
+    for i in 0..array.length-1
         if array[i] == target || array[i+1] == target 
-           return true
+          
+            return true
         else
-           return false 
-        end
-    end
-     
+         
+            return false 
+         end
+     end
+
+ 
 end
 
 
