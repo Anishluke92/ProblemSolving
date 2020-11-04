@@ -14,10 +14,6 @@ You can modify the input array in-place.
 def missingpostiveint(array)
     array = array.sort 
     expected = array[0]
-    
-        
- 
-
     array.each_with_index do |value, index|
         return expected  if value != expected
         expected = 1  if expected == -1   
