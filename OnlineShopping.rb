@@ -21,9 +21,7 @@ def free_shipping(hash)
   hash.each do |element, value|
     total += value
   end
-  return "True"if total > 50 
-  return "False"
- 
+  total > 50 
 end 
 print free_shipping({ "Shampoo" => 5.99, "Rubber Ducks" => 15.99 })
 puts ""
