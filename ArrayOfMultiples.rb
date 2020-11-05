@@ -13,13 +13,6 @@ Algorithm:
 =end 
 
 def array_of_multiples(number, range)
-=begin 
-    multiplied = []
-    for i in 1..range 
-      multiplied.push(number * i)
-    end
-    multiplied
-=end
     (1..range).map{|e| e * number}
 end
 print array_of_multiples(7, 5)
