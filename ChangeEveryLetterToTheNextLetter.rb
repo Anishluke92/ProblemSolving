@@ -25,17 +25,22 @@ Algorithm:
 
 
 def move(word)
-  arr = []
-  word = word.downcase.scan /\w/ 
+  string = " "
+  word = word.split("")
+  array = ('a'..'z').to_a
   alphabet = Hash.new
-  ('a'..'z').each_with_index do |key, value| 
-    alphabet[key] = value 
+
+  array.each_with_index do |key, value| 
+    if value != array.length-1
+      alphabet[key] = array[value + 1] 
+    else
+      alphabet[key] = array[0]
+    end
   end 
   word.each do |element| 
-    arr.push(alphabet.key(alphabet[element]+1))
+    string += alphabet[element] 
   end
-
-  arr.join("")
+  string
 end 
 
 print move("hello")
