@@ -25,7 +25,7 @@ Algorithm:
 
 
 def move(word)
-  string = " "
+  string = ""
   word = word.split("")
   array = ('a'..'z').to_a
   alphabet = Hash.new
@@ -48,5 +48,4 @@ puts ""
 print move("bye")
 puts ""
 print move("welcome")
-
 
