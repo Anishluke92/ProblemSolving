@@ -24,15 +24,18 @@ every time you do count, you are going through the whole array and checking the 
 
 try a better algorithm where you only have to go through the array one and then get the result in the end.
 
+[13, true, 13, nil]
+
 everytime you call .count it goes over it
 =end
 
 def delete_occurrences(arr, num)
-  newarray = []
-  arr.each do |element| 
-    newarray.push(element) if newarray.count(element) != num   
-  end
- newarray
+    newarray= []
+    newarray = []
+    arr.each do |element| 
+      newarray.push(element) if newarray.count(element) != num   
+    end
+    newarray
 end
 
 print delete_occurrences([1, 1, 1, 1], 2)
