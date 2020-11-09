@@ -8,29 +8,29 @@ canBalance([10, 10]) → true
 =end
 
 def canBalance(array)
-    leftside = 0
-    rightside = 0 
-    if array.length <= 2
-        half = 0
-    else
-        half = ((array.length)/2).round()
-    end 
-
-    for i in 0...array.length 
-
-        if  i > half 
-            rightside += array[i]
+    lindex = 0
+    rindex = -1
+    leftside = array[lindex]
+    rightside = array[rindex]
+    array.each_with_index do |element, index|
+        if leftside == rightside && index == 0
+            leftside += array[lindex += 1]
+            rightside += array[rindex += - 1]
+        end 
+        
+        if leftside > rightside 
+            righside += array[rindex += -1]
+        elsif rightside > leftside 
+            leftside += array[lindex += 1]
         else
-            leftside += array[i]
+            leftside == rightside
         end 
     end
-
-    return true if leftside == rightside
-
-    false
+    
 
 end 
 
+# this doesn't work 
 
 print canBalance([1, 1, 1, 2, 1]) 
 puts ""
