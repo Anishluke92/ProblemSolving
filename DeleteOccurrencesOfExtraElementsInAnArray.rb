@@ -29,15 +29,26 @@ try a better algorithm where you only have to go through the array one and then 
 everytime you call .count it goes over it
 =end
 
-def delete_occurrences(arr, num)
-    newarray= []
-    newarray = []
-    arr.each do |element| 
-      newarray.push(element) if newarray.count(element) != num   
+def delete_occurrences(array, limit)
+  i = 0
+  check = array[i]
+  occurrence = []
+  counter  = 0
+  array.each_with_index do |element, index|
+   if check == element 
+      if counter != limit-1 
+        occurrence.push(check)
+        counter += 1
+      else 
+        check = array[i + 1]
+        counter = 0
+      end
     end
-    newarray
-end
 
+  end
+  occurrence
+ end
+#its not ready
 print delete_occurrences([1, 1, 1, 1], 2)
 puts ""
 print delete_occurrences([13, true, 13, nil], 1)
