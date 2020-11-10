@@ -1,8 +1,5 @@
 def linearSearch(array,target)
-  #  array.each do |item|
-  ##     return item if item == target 
-  #     return "Not found !"
-  #  end
+
     i = 0 
     while i < array.length 
         if array[i] == target 
