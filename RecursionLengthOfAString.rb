@@ -19,7 +19,6 @@ def length(string)
   return 0 if string == '' 
   1 + length(string.chop)  
 end
-
     
 print length("apple")
 puts ""
