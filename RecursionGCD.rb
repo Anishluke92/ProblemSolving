@@ -16,7 +16,6 @@ N/A
 =end
 
 def gcd(a, b)
- 
   if a % b == 0
     b
   else
