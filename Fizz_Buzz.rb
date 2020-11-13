@@ -10,12 +10,13 @@ For numbers which are multiples of both 3 and 5, print "FizzBuzz" instead of the
 
     
 =end
-    (1..100).each do |x|
-     puts case
-       when x.modulo(3) == 0 && x.modulo(5) == 0 then 'FizzBuzz'
-       when x.modulo(3) == 0 then 'Fizz'
-       when x.modulo(5) == 0 then 'Buzz'
-       else x
-     end
-    end
-
+def fizzbuzz(max)
+  1.upto(max).each do |n|
+    line = ''
+    line << 'Fizz' if n % 3 == 0
+    line << 'Buzz' if n % 5 == 0
+    line = n if line.empty?
+    p line
+  end
+end
+fizzbuzz(100)
