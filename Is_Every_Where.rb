@@ -22,17 +22,14 @@ we should only return false when we know its NOT there. so we can stop the progr
 
 def isEverywhere(array, target)
     arr = []
-    for i in 0..array.length-1
-        if i != array.length-1
-            if array[i] == target || array[i+1]== target 
-                arr.push(true)
-            else
-                arr.push(false)
-            end 
+    i = 0 
+    while i <= array.length-2 
+        if array[i] == target || array[i+1] == target ? arr.push(true) : arr.push(false)
         end 
+        i += 1
     end
         
-    arr.last 
+    arr.pop
  
 end
 
