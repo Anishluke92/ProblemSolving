@@ -30,28 +30,35 @@ everytime you call .count it goes over it
 =end
 
 def delete_occurrences(array, limit)
-  i = 0
-  check = array[i]
-  occurrence = []
-  counter  = 0
-  array.each_with_index do |element, index|
-   if check == element 
-      if counter != limit-1 
-        occurrence.push(check)
-        counter += 1
-      else 
-        check = array[i + 1]
-        counter = 0
-      end
-    end
+  #count = 0
+  newarray = []
+  for i in 0...array.length    
+    if !newarray.include?(array[i])
+      check = array[i]
+      count = 0
+      array.each do |element|
+        if element == check 
+          if count != limit 
+            newarray.push(check)
+            count += 1 
+          end 
+        end
 
-  end
-  occurrence
- end
+      end
+
+    end
+  end 
+  newarray
+end
+
+
+
 #its not ready
 print delete_occurrences([1, 1, 1, 1], 2)
 puts ""
 print delete_occurrences([13, true, 13, nil], 1)
 puts ""
-print delete_occurrences([true, true, true], 3)
+print delete_occurrences([true, true, true], 2)
+puts ""
+print delete_occurrences([1,3,1,3,7,4,1,2,1,4,3,3], 2)
 
