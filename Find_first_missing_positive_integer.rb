@@ -19,7 +19,6 @@ def findfirstmissingpostiveint(array)
         expected = 1 if expected == -1 
         expected += 1 
     end 
-   
 end
 
 
