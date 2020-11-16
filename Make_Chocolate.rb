@@ -12,7 +12,7 @@ def makeChocolate(smallbar, bigbar, goal)
     if totalbar != goal    
         totalbar - goal
     else 
-        return smallbar
+         smallbar
     end 
 
 end
