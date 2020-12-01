@@ -23,8 +23,6 @@ def gcd(a, b)
   end
 end
 
-
-
 print gcd(2, 6)
 puts ""
 print gcd(10, 20)
