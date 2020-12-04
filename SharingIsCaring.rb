@@ -15,7 +15,7 @@ def love(removed, numbers)
       if number * 0.25 < 1 || number == numbers.min
         number += removed 
       else
-        number -= number*0.25
+        number -= number * 0.25
       end
     end
   end
