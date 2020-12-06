@@ -14,7 +14,7 @@
 - [ ] routes
 - [ ] controllers
 - [ ] models
-- [ ] dabasebase
+- [ ] database
 - [ ] MVC archistructure 
 - [ ] performance & best practices
 - [ ] deploying to a production server
