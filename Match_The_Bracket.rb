@@ -7,22 +7,24 @@ For example, given the string "([])", you should return true.
 Given the string "([)]" or "((()", you should return false.
   
 =end
+$brackets = { "{" => "}", "[" => "]", "(" => ")" }
 
 def index_finder(string)
-  brackets = { "{" => "}", "[" => "]", "(" => ")" }
   reference = ["{", "[", "("]
-  index  = 0
   string.chars.each_with_index do |element, index|
-    return index = index - 1 if !brackets.has_key?(element)
+    return index - 1 if !$brackets.has_key?(element)
   end
 end
 
 def bracket(string)
-  brackets = { "{" => "}", "[" => "]", "(" => ")" }
-  
+  result = []
   open_side = string[0..index_finder(string)]
   close_side = string[index_finder(string) + 1..string.length - 1]
-  
+  for i in 0..(open_side.length-1)
+    result << false  if $brackets[open_side[i - 1]] != close_side[i]
+    result << true 
+  end
+  result.all? true
 end 
 
 
