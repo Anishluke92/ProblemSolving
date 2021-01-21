@@ -1,4 +1,4 @@
-# Problem solving 
+# Problem Solving 
 
 ...
 - [ ] problem solving with sorting algorithms & search algorithms
@@ -19,4 +19,3 @@
 - [ ] performance & best practices
 - [ ] deploying to a production server
 - [ ] Continuous integration & automated testing
-
