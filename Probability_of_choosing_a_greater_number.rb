@@ -9,18 +9,18 @@ Precent probability of event = 100 * (num of favourable outcomes) / (total num o
 =end
 
 def probability(array, n)
-    count = 0.0
+    count = 0
     precernt_probability = 0
-    array.each do |elements|
-      if elements >= n
+    array.each do |number|
+      if number >= n
         count += 1
-        precernt_probability = (count * 100 / array.length).round(1)
+        precernt_probability = ((100.0 * count)/ array.length).round(1)
       end
     end
     precernt_probability
-  end
-  
-  puts probability([5, 1, 8, 9], 6)
-  puts probability([7, 4, 17, 14, 12, 3], 16)
-  puts probability([4, 6, 2, 9, 15, 18, 8, 2, 10, 8], 6)
+end
+
+puts probability([5, 1, 8, 9], 6)
+puts probability([7, 4, 17, 14, 12, 3], 16)
+puts probability([4, 6, 2, 9, 15, 18, 8, 2, 10, 8], 6)
   
