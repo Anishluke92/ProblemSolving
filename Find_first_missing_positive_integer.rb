@@ -13,7 +13,6 @@ You can modify the input array in-place.
 
 def findfirstmissingpostiveint(array)
     array = array.sort 
-    expected  = array[0]
     array.each_with_index do |number, index|
         answer = 0 
         answer = number + 1
