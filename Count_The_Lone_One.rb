@@ -12,23 +12,15 @@ count_lone_ones(462) ➞ 0
 =end
 
 def count_lone_ones(string)
-    string = string.to_s.split(//).map{|chr| chr.to_i}
-    check = 1
-    count = 0
-    len = (string.length)-1
-
-    return 0  if !string.include?(1)
-   
-    string.each_with_index do |number, index|
-        if index == 0 && number == check && string[index+1] != check  || index == len  && number == check && string[index-1] != check
-            count += 1 
-        elsif string[index-1] != check && number == check && string[index+1] != check 
-            count += 1
-        else
-            count += 0
-        end
+  array = string.to_s.chars
+  count = 0
+  array.each_with_index do |number, ind|  
+     if number == "1"
+        count += 1 if ind == 0  && array[ind + 1] != "1"
+        count += 1  if array[ind - 1] != "1" && array[ind + 1] != "1"
      end
-    count       
+  end 
+  count
 end 
 
 print  count_lone_ones(101)
