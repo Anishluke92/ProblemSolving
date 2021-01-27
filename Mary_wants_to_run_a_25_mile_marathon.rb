@@ -14,22 +14,17 @@
 
 
 def marathon_distance(array)
-  return 0 if array.length < 0
-
   total_distance = 0
   array.each do |elements|
     total_distance += elements.abs()
   end   
-
-  return true if total_distance == 25    
-  return false
+  total_distance == 25  
  end
-   
 
-    puts marathon_distance([1, 2, 3, 4])
-    puts marathon_distance([1, 9, 5, 8, 2])
-    puts marathon_distance([-6, 15, 4])
-    puts marathon_distance([])
+puts marathon_distance([1, 2, 3, 4])
+puts marathon_distance([1, 9, 5, 8, 2])
+puts marathon_distance([-6, 15, 4])
+puts marathon_distance([])
    
    
    
