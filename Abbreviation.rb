@@ -12,18 +12,17 @@ unique_abbrev(["mo", "ma", "me"], ["moment", "many", "mean"]) ➞ true
 Notes
 Abbreviations will be a substring from [0, n] from the original string.
 =end
-def unique_abbrev(abb, words)
+def unique_abbrev(abbrev, words)
   result = []
-
-  abb.each do |ab|
+  abbrev.each do |abb|
     count = 0
-     words.each_with_index do |word, index|
-        temp_word = word[0..ab.length - 1]
-        count += 1 if temp_word[ab] 
-        result << count if index == words.length - 1 
+    words.each_with_index do |word, index|
+      temp_word = word[0..abb.length - 1]
+      count += 1 if temp_word[abb] 
+      return false if count > 1
     end
   end
-    result.all?(1) 
+  true
 end
   
   print unique_abbrev(["ho", "h", "ha"], ["house", "hope", "happy"])
