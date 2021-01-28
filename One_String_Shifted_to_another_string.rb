@@ -11,13 +11,12 @@ For example, if A is abcde and B is cdeab, return true. If A is abc and B is acb
 
 def string(a, b)
   array = a.split("")
-  limit = array.length * array.length
-  (limit).times do |x|
-    for x in 0..array.length - 1
-        array[x], array[x - 1] = array[x - 1], array[x] if array.join != b    
-        return true 
-    end
-   end 
+  (0..array.length - 1).each do |char|
+    first = array.shift
+    array << first
+    return true if array.join == b  
+  end 
+  false
 end 
 
 
