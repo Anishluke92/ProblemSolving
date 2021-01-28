@@ -12,18 +12,12 @@ second_largest([54, 23, 11, 17, 10]) ➞ 23
 
 
 def second_largest(array)
-  return array if array.size <= 1
-  swap = true  
-  while swap 
-    swap = false
-    (array.length - 1).times do |x|
-        if array[x] < array[ x + 1]
-            array[x], array[ x + 1] = array[x + 1], array[x]
-            swap = true 
-        end 
-     end
-   end
-  array[1]
+  first_largest = array.max
+  highest = 0
+  array.each_with_index do |number, ind|   
+    highest = number  if highest < number && number != first_largest
+    return highest if ind == array.length - 1
+  end 
 end 
 
 
