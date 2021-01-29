@@ -43,11 +43,11 @@ def distance_to_nearest_vowel(string)
   result = [] 
   array = string.chars
   array.each_with_index do |letter, ind|
-      if !$vowels[letter.to_sym]
-          result << calculation(array, ind)
-      else 
-          result << $vowels[letter.to_sym]
-      end
+    if !$vowels[letter.to_sym]
+        result << calculation(array, ind)
+    else 
+        result << $vowels[letter.to_sym]
+    end
   end 
   result
 end 
