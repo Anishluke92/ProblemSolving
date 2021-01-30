@@ -6,16 +6,18 @@ reverse([]) ➞ []
 =end
 
 def reverse(array)
-   return "Empty array" if array.empty? 
   reversed = Array.new
+  return reversed if array.empty? 
   (1..array.size).each do |i|
     reversed << array[i * -1]
   end
-  "Array being reversed to #{reversed}"
+   reversed
 end
   
-puts reverse([9, 9, 2, 3, 4])
-puts reverse([1, 2, 3, 4]) 
-puts reverse([])
+print reverse([9, 9, 2, 3, 4])
+puts ""
+print reverse([1, 2, 3, 4]) 
+puts ""
+print reverse([])
 
 
