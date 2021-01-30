@@ -35,32 +35,29 @@ Here, each tile is represented as a hash with two keys: tile and score.
 =end
 def maximum_score(array)
   count = 0
-  array.each do |item|
-      item.each { |key, value| count += value  if key == "score"}
+  array.each do |i|
+    count += i["score"]
   end
-  puts count
+  count
 end
    
   
-  
-  
-  maximum_score([
-    { "tile" => "N", "score" => 1 },
-    { "tile" => "K", "score" => 5 },
-    { "tile" => "Z", "score" => 10 },
-    { "tile" => "X", "score" => 8 },
-    { "tile" => "D", "score" => 2 },
-    { "tile" => "A", "score" => 1 },
-    { "tile" => "E", "score" => 1 }
-  ])
-  
-  maximum_score([
-    { "tile" => "B", "score" => 2 },
-    { "tile" => "V", "score" => 4 },
-    { "tile" => "F", "score" => 4 },
-    { "tile" => "U", "score" => 1 },
-    { "tile" => "D", "score" => 2 },
-    { "tile" => "O", "score" => 1 },
-    { "tile" => "U", "score" => 1 }
-  ]) 
-  
+print maximum_score([
+  { "tile" => "N", "score" => 1 },
+  { "tile" => "K", "score" => 5 },
+  { "tile" => "Z", "score" => 10 },
+  { "tile" => "X", "score" => 8 },
+  { "tile" => "D", "score" => 2 },
+  { "tile" => "A", "score" => 1 },
+  { "tile" => "E", "score" => 1 }
+])
+puts "" 
+print maximum_score([
+  { "tile" => "B", "score" => 2 },
+  { "tile" => "V", "score" => 4 },
+  { "tile" => "F", "score" => 4 },
+  { "tile" => "U", "score" => 1 },
+  { "tile" => "D", "score" => 2 },
+  { "tile" => "O", "score" => 1 },
+  { "tile" => "U", "score" => 1 }
+]) 
