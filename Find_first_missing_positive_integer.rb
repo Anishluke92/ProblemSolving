@@ -11,10 +11,9 @@ You can modify the input array in-place.
 
 =end 
 
-def FindFirstMissingPostiveInt(array)
+def findFirstMissingPostiveInt(array)
   array = array.sort 
   array.each_with_index do |number, index|
-    #answer = 0
     answer = number + 1
     if number == -1 
       if index == 0 
@@ -29,14 +28,12 @@ def FindFirstMissingPostiveInt(array)
 
 end
 
-
-
-print FindFirstMissingPostiveInt([3, 4, -1, 1])
+print findFirstMissingPostiveInt([3, 4, -1, 1])
 puts ""
-print FindFirstMissingPostiveInt([1, 2, 0])
+print findFirstMissingPostiveInt([1, 2, 0])
 puts ""
-print FindFirstMissingPostiveInt([-7, -6, -5, -3, -1])
+print findFirstMissingPostiveInt([-7, -6, -5, -3, -1])
 puts ""
-print FindFirstMissingPostiveInt([-2,1])
+print findFirstMissingPostiveInt([-2,1])
 puts " "
-print FindFirstMissingPostiveInt([-2, -4, -3, -1, 1, 2])
+print findFirstMissingPostiveInt([-2, -4, -3, -1, 1, 2])
