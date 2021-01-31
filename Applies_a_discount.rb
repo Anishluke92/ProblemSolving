@@ -9,18 +9,10 @@ The discount is the percentage of the original price (i.e the discount of "75%" 
 There won't be any awkward decimal numbers, only 0.5 to deal with.
 =end
 =begin
-def get_discounts(array, n)
-  discount = (n.to_i) * 0.01
-  array.map! {|item| item * discount}
-end
 =end
 
 def get_discounts(array, discount)
-  discounted_price = []
-  array.each do |price|
-     discounted_price << price * discount.to_f * 0.01
-  end
-  discounted_price
+  array.map {|price| price * discount.to_i * 0.01 }
 end
   
 print get_discounts([2, 4, 6, 11], "50%") 
