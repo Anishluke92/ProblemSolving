@@ -37,6 +37,7 @@ def weeklySalary(array)
   week_salary + weekend_salary
 end
   
+
 print weeklySalary([8, 8, 8, 8, 8, 0, 0])
 puts ""
 print weeklySalary([10, 10, 10, 0, 8, 0, 0])
