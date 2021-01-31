@@ -14,7 +14,7 @@ You can modify the input array in-place.
 def FindFirstMissingPostiveInt(array)
   array = array.sort 
   array.each_with_index do |number, index|
-    answer = 0
+    #answer = 0
     answer = number + 1
     if number == -1 
       if index == 0 
