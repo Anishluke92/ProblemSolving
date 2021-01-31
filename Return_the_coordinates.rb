@@ -25,14 +25,8 @@ Rows and columns are 1-indexed (not zero-indexed).
 
 def where_is_waldo(array)
    coordinates = []
-   value = array[0][0]
-   array.each_with_index do |sub_array, array_index|
-     sub_array.each_with_index do |element, sub_array_index|
-        if element != value
-            coordinates << array_index + 1 
-            coordinates << sub_array_index + 1
-        end
-     end
+   array.each_with_index do |i, index_a|
+    i.find_all.each_with_index { |e, index_b|  coordinates.push(index_a + 1, index_b + 1) if i.count(e) == 1 }
    end
    coordinates
 end
@@ -62,6 +56,14 @@ print where_is_waldo([
 ]) 
   
   
-  
+puts ""
+print where_is_waldo([
+  ["P", "O", "O", "O"],
+  ["O", "O", "O", "O"],
+  ["O", "O", "O", "O"],
+  ["O", "O", "O", "O"],
+  ["O", "O", "O", "O"],
+  ["O", "O", "O", "O"]
+])
   
   
