@@ -12,10 +12,9 @@ Don't include 0 in the countdown.
 =end
 
 def countdown(number, string)
-   x = number 
-   while x > 0
-    print "#{x}. "
-    x -= 1
+   while number > 0
+    print "#{number}. "
+    number -= 1
    end
    print "#{string}!"
 end
