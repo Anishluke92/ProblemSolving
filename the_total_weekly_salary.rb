@@ -16,7 +16,6 @@ Every element in the array is greater than or equal to 0.
 def weeklySalary(array)
   week_salary = 0
   weekend_salary = 0
-  total_salary = 0
   array.each_with_index do |hours, day|
     if day >= 5
       if hours > 8 
