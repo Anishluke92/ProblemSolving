@@ -12,6 +12,7 @@ second_largest([54, 23, 11, 17, 10]) ➞ 23
 
 
 def second_largest(array)
+  a = 1
   first_largest = array.max
   highest = 0
   array.each_with_index do |number, ind|   
