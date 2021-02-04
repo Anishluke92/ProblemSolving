@@ -10,6 +10,11 @@ class Queue
     @queues = []
   end
 
+  def is_empty 
+    return "Queue is empty...!" if @queues.length < 1
+    "Queue is not empty"
+  end 
+
   def enqueue(item)
     @queues.unshift(item)
   end 
@@ -48,8 +53,10 @@ print queues.peek
 puts ""
 print queues.dequeue
 puts ""
-print queues.display 
-
+print queues.display
+puts ""
+print queues.is_empty
+puts ""
 
 
 
