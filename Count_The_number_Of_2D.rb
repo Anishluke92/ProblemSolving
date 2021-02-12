@@ -18,19 +18,17 @@ count_ones([
 =end
 
 def count_number(array)
-    count = 0
-    array.each do |subarray|
-      subarray.each do |i|
-        count += 1 if i == 1
-      end
+  count = 0
+  array.each do |subarray|
+    subarray.each do |i|
+      count += 1 if i == 1
     end
-    count
   end
+  count
+end
   
-  
-  puts count_number([[1, 0],[0, 0]])
-  
-  puts count_number([[1, 1, 1], [0, 0, 1],[1, 1, 1]])
-  
-  puts count_number([[1, 2, 3],[0, 2, 1],[5, 7, 33]])
-  
+puts count_number([[1, 0],[0, 0]])
+
+puts count_number([[1, 1, 1], [0, 0, 1],[1, 1, 1]])
+
+puts count_number([[1, 2, 3],[0, 2, 1],[5, 7, 33]])
