@@ -1,0 +1,26 @@
+=begin
+1. The 2nd of February 2020 is a palindromic date in both dd/mm/yyyy and mm/dd/yyyy format (02/02/2020). Given a date in dd/mm/yyyy format, return true if the date is palindromic in both date formats, otherwise return false.
+Examples
+palindromic_date("02/02/2020") ➞ true
+palindromic_date("11/12/2019") ➞ false
+palindromic_date("11/02/2011") ➞ false
+# Although 11/02/2011 is palindromic in dd/mm/yyyy format,
+# it isn't in mm/dd/yyyy format (02/11/2011)
+Notes
+All dates will be valid in both date formats.
+The date must be palindromic in both dd/mm/yyyy and mm/dd/yyyy formats to pass.
+=end
+
+def palindromic_date(date)
+  date = date.split("/")
+  mm = date[0]
+  dd = date[1]
+  yyyy = date[2]
+  "#{dd}/#{mm}/#{yyyy}" == "#{mm}/#{dd}/#{yyyy}"
+end
+
+print palindromic_date("02/02/2020")
+puts ""
+print palindromic_date("11/12/2019")
+puts ""
+print palindromic_date("11/02/2011")

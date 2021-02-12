@@ -5,14 +5,19 @@ reverse([9, 9, 2, 3, 4]) ➞ [4, 3, 2, 9, 9]
 reverse([]) ➞ []
 =end
 
-def reverse(arr)
-    reversed = Array.new
-    (1..arr.size).each do |i|
-      reversed << arr[i * -1]
-    end
-    reversed
+
+def reverse(array)
+  reversed = Array.new
+  return reversed if array.empty? 
+  (1..array.size).each do |i|
+    reversed << array[i * -1]
   end
+   reversed
+end
   
-  puts "Array being reversed to  #{reverse([9, 9, 2, 3, 4])}" 
-  puts "Array being reversed to  #{reverse([1, 2, 3, 4])}" 
-  puts "Array being reversed to  #{reverse([])}" 
+print reverse([9, 9, 2, 3, 4])
+puts ""
+print reverse([1, 2, 3, 4]) 
+puts ""
+print reverse([])
+
