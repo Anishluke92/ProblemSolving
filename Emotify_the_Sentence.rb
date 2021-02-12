@@ -22,10 +22,12 @@ Try to solve this without using conditional statements like if/else.
 
 def emotify(string)
   emoji = { 
-      "smile" => ":D", 
-      "grin" => ":)", 
-      "sad" => ":(", 
-      "mad" => ":P"  }
+      "smile": ":D", 
+      "grin": ":)", 
+      "sad": ":(", 
+      "mad": ":P"  
+  }
+
   string_builder = string.split
   string_builder << emoji[string_builder.pop]
   string_builder.join(" ")
