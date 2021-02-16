@@ -75,6 +75,7 @@ class BinarySearchTree
   btds.insert(44)
   btds.insert(80)
   btds.insert(50)
+  btds.insert(100)
   puts "inOrderTraversal"
   btds.inOrderTraversal
   puts "postOrderTraversal"
