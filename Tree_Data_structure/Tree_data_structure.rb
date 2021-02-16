@@ -3,22 +3,22 @@
     Simple Binary Tree data structure andsearch algorithm
 =end
 class BinarySearchTree
-    attr_accessor :root
-    class Node
-        attr_accessor :data, :left, :right
-        def initialize(data)
-            @data = data 
-            @left = nil
-            @right = nil 
-        end 
-        def insert(key)
-          if key <= @data 
-            @left.nil? ? @left = Node.new(key) : @left.insert(key)
-          elsif key > @data 
-            @right.nil? ? @right = Node.new(key) : @right.insert(key)
-          end 
-        end 
-    end
+  attr_accessor :root
+  class Node
+    attr_accessor :data, :left, :right
+    def initialize(data)
+        @data = data 
+        @left = nil
+        @right = nil 
+    end 
+    def insert(key)
+      if key <= @data 
+        @left.nil? ? @left = Node.new(key) : @left.insert(key)
+      elsif key > @data 
+        @right.nil? ? @right = Node.new(key) : @right.insert(key)
+      end 
+    end 
+  end
 
   def initialize 
     @root = nil
