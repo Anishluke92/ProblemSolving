@@ -11,7 +11,7 @@ class BinarySearchTree
         @left = nil
         @right = nil 
     end 
-    
+
     def insert(key)
       if key <= @data 
         @left.nil? ? @left = Node.new(key) : @left.insert(key)
@@ -86,8 +86,4 @@ btds.preOrderTraversal
 puts "Search"
 puts btds.search(33)
 puts 
-puts btds.search(11)
-
-
-
-   
+puts btds.search(11) 
