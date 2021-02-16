@@ -11,7 +11,6 @@ class BinarySearchTree
         @left = nil
         @right = nil 
     end 
-
     def insert(key)
       if key <= @data 
         @left.nil? ? @left = Node.new(key) : @left.insert(key)
