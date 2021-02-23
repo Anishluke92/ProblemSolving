@@ -25,8 +25,10 @@ Rows and columns are 1-indexed (not zero-indexed).
 
 def where_is_waldo(array)
    coordinates = []
-   array.each_with_index do |i, index_a|
-    i.find_all.each_with_index { |e, index_b|  coordinates.push(index_a + 1, index_b + 1) if i.count(e) == 1 }
+   array.each_with_index do |sub_array, index_a|
+      sub_array.each_with_index do |element, index_b|
+        return coordinates.push(index_a + 1, index_b +1) if element != sub_array[index_b + 1] && element  != sub_array[index_b - 1]
+      end 
    end
    coordinates
 end
